@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'shipmonk'
+
+def show_help
+  puts "HELP!"
+end
+
+show_help & exit(0) unless ARGV.length > 0
+
+$command = ARGV.shift
+
+def server
+  puts 'OMG SERVER TIMEZ!'
+end
+
+case $command
+when 'server' then
+  server
+else
+  puts "Unknown command #{$command}"
+  show_help
+end
