@@ -11,7 +11,7 @@ module Shipmonk
       } unless ENV.fetch('SHIPMONK_ENV', :local).to_sym == :live
     end
 
-    def include_file partial, locals = {}
+    def include_file(partial, locals = {})
       content = File.read(File.expand_path "src/_#{partial.to_s}.html.haml")
       Haml::Engine.new(content).render Object.new, locals
     end

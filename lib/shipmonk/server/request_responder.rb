@@ -26,9 +26,9 @@ class Shipmonk::Server::RequestResponder
     end
   end
 
-  def compile_haml file, haml_options = {}
-    content = File.read(file)
-    engine = Haml::Engine.new content, haml_options
+  def compile_haml(file, haml_options = {})
+    content = File.read file
+    engine = Haml::Engine.new(content, haml_options)
     engine.render Shipmonk::ViewContext.new
   end
 

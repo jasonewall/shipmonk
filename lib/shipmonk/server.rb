@@ -8,7 +8,7 @@ class Shipmonk::Server < Rack::Builder
       run self
     end
 
-    def call env
+    def call(env)
       responder = RequestResponder.new Rack::Request.new(env)
       responder.respond
     end
