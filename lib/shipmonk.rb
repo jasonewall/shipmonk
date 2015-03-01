@@ -1,5 +1,4 @@
 require "shipmonk/version"
-require 'shipmonk/server'
 require 'pathname'
 
 module Shipmonk

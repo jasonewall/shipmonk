@@ -13,8 +13,12 @@ module Shipmonk
 
     desc 'server', 'Start up a local server that hosts your site.'
 
-    def server
-      puts 'OMG SERVER TIMEZ!'
+    def server(*args)
+      require 'shipmonk/server'
+      # get rid of 'server' in the args list
+      # otherwise :config in default_options gets set to 'server'
+      ARGV.shift
+      Shipmonk::Server.new.start
     end
 
     def self.source_root

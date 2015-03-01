@@ -1,3 +1,3 @@
 require 'shipmonk'
 
-run Shipmonk::Server.new.to_app
+run Shipmonk::Server.new
