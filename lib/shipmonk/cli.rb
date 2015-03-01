@@ -32,6 +32,7 @@ module Shipmonk
       Dir.mkdir destination_root
       copy_file 'config.ru'
       copy_file 'Gemfile'
+      directory 'src'
     end
   end
 end
