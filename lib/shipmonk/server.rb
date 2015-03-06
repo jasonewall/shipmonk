@@ -1,10 +1,12 @@
 require 'rack'
+require 'rack-livereload'
 
 class Shipmonk::Server < Rack::Server
   def middleware
     middlewares = []
     middlewares << [Rack::Static, { urls: ['/images', '/styles', '/scripts'], root: 'public' }]
     middlewares << [Rack::Reloader]
+    middlewares << [Rack::LiveReload]
     Hash.new(middlewares)
   end
 

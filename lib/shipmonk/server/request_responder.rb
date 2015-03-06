@@ -11,10 +11,9 @@ class Shipmonk::Server::RequestResponder
   def respond
     if template_source_file.exist?
       content = compile_haml template_source_file
-      Rack::Response.new.finish do |response|
+      Rack::Response.new(content).tap do |response|
         response['content-type'] = 'text/html'
         response.status = 200
-        response.write content
       end
     else
       Rack::Response.new.finish do |response|
@@ -29,7 +28,7 @@ class Shipmonk::Server::RequestResponder
   def compile_haml(file, haml_options = {})
     content = File.read file
     engine = Haml::Engine.new(content, haml_options)
-    engine.render Shipmonk::ViewContext.new
+    engine.render Shipmonk::ViewContext.new(request)
   end
 
   def template_source_file
