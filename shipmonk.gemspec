@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["javajo@gmail.com"]
   spec.description   = %q{Environment for prototyping, developing, and maintaining static websites}
   spec.summary       = %q{Environment for prototyping, developing, and maintaining static websites}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/thejayvm/shipmonk"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -18,10 +18,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "haml", '>= 4.0.3'
-  spec.add_runtime_dependency "rack", '>= 1.5.2'
+  spec.add_runtime_dependency "haml", '~> 4.0', '>= 4.0.3'
+  spec.add_runtime_dependency "rack", '~> 1.5', '>= 1.5.2'
   spec.add_runtime_dependency "thor", '~> 0'
-  spec.add_runtime_dependency 'rack-livereload', '~> 0'
+  spec.add_runtime_dependency 'rack-livereload', '~> 0', '>= 0.3.15'
+  spec.add_runtime_dependency 'guard-livereload', '>= 2.4.0'
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
