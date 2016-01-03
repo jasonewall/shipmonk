@@ -1,4 +1,5 @@
 require 'thor'
+require 'shipmonk'
 
 module Shipmonk
   class CLI < Thor

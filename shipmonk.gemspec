@@ -9,7 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jason Wall"]
   spec.email         = ["javajo@gmail.com"]
   spec.description   = %q{Environment for prototyping, developing, and maintaining static websites}
-  spec.summary       = %q{Environment for prototyping, developing, and maintaining static websites}
+  spec.summary       = <<-MD
+    Prototype a website with dynamic templating. Compile it. Deploy it to a static host.
+  MD
   spec.homepage      = "https://github.com/thejayvm/shipmonk"
   spec.license       = "MIT"
 
@@ -25,5 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'guard-livereload', '>= 2.4.0'
 
   spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", '~> 0'
 end
