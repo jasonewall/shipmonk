@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = <<-MD
     Prototype a website with dynamic templating. Compile it. Deploy it to a static host.
   MD
-  spec.homepage      = "https://github.com/thejayvm/shipmonk"
+  spec.homepage      = "https://github.com/jasonewall/shipmonk"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
